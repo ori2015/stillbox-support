@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stillbox — Support</title>
+<style>:root{color-scheme:light dark;--bg:#f7f7f8;--card:#fff;--text:#16171a;--muted:#5b5f66;--border:#e4e4e7;--accent:#2f6fed}@media(prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#17191f;--text:#f2f3f5;--muted:#9a9da5;--border:#2a2d34;--accent:#5b8bf7}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;padding:24px}main{max-width:760px;margin:0 auto 24px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px}h1{margin-top:0;font-size:1.6rem}h2{font-size:1.15rem;margin-top:1.8rem}a{color:var(--accent)}hr{border:0;border-top:1px solid var(--border);margin:2rem 0}code{background:var(--border);padding:1px 5px;border-radius:4px}.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}.muted{color:var(--muted);font-size:.9rem}</style>
+</head>
+<body>
+<main id="en" lang="en" dir="ltr">
+<h1>Stillbox Support</h1>
+<p>Stillbox keeps your photos, videos and files in an encrypted vault
+that lives in a folder you choose. No account, no tracking, no developer
+servers — your keys stay on your devices.</p>
+<p><strong>Contact:</strong> <a href="https://github.com/ori2015/stillbox-support/issues/new">GitHub Issues</a> · <strong>Privacy policy:</strong> <a href="privacy.html">privacy.html</a></p>
+<h2>Troubleshooting</h2>
+<h3>I can&#39;t unlock my vault</h3>
+<ol>
+<li><strong>Wrong PIN?</strong> After several wrong attempts the app deliberately waits
+longer each time before accepting another try. Wait for the countdown,
+then try again carefully. The delay is remembered, so closing and reopening
+the app does not shorten it; a correct unlock clears it.</li>
+<li><strong>Face ID not appearing or failing?</strong> Make sure Face ID is enrolled and
+allowed for the app in iOS Settings → Face ID &amp; Passcode → Other Apps.
+Then return to the app and try again.</li>
+<li><strong>Re-enrolled Face ID recently (or restored the phone)?</strong> The old
+device-bound secret is invalidated by design when biometrics change. Use
+your 24-word recovery phrase to open the vault, then set up a new PIN.</li>
+<li><strong>Opened on a new device?</strong> Use the recovery phrase — that is exactly
+what it is for.</li>
+</ol>
+<h3>My iCloud vault opens slowly or shows &quot;waiting&quot;</h3>
+<p>Parts of the folder may not be downloaded yet. The app asks iCloud to fetch
+them before it can read; keep the app open, connected to Wi-Fi and power,
+and give it time for large vaults. Once materialized locally, opening is
+fast again. If it stays stuck: open the Files app, navigate to the vault&#39;s
+parent folder, and confirm files show either downloaded or &quot;downloading&quot;
+status; pause other large syncs if needed.</p>
+<h3>The app locked itself while I was using it</h3>
+<p>That is the intended behavior: leaving the app (or certain system events)
+locks the vault immediately and covers the screen in the app switcher.
+Unlock again with Face ID + PIN.</p>
+<h3>An import or export was interrupted</h3>
+<p>Nothing needs cleanup: imports write encrypted chunks before they are
+recorded in the index, so a failed import leaves no half item behind (any
+unused data is cleaned up automatically later). A cancelled export discards
+its temporary file when the share sheet closes.</p>
+<h3>I moved or renamed my vault folder in Files</h3>
+<p>Move it back / rename it back to what the app expects, or remove it with
+<em>Forget saved folder</em> and re-add the folder from its new location. The vault
+contents are unaffected by being moved.</p>
+<h3>Moving to a new iPhone</h3>
+<ol>
+<li>Make sure your vault folder is reachable on the new device (iCloud Drive,
+or transfer via Files/AirDrop/backup-restore of On My iPhone).</li>
+<li>Install the app, choose <em>Open existing vault</em>, select the <code>.vault</code>
+folder.</li>
+<li>Unlock with your 24-word recovery phrase, then set a PIN for that device.</li>
+</ol>
+<h3>Something else went wrong</h3>
+<p>Open an issue at <a href="https://github.com/ori2015/stillbox-support/issues/new">https://github.com/ori2015/stillbox-support/issues/new</a> with: what you did, what you expected, what
+happened, device model and iOS version. Optionally open <em>Switch vault → Export
+support diagnostics</em> and paste the result. Please never send your recovery phrase,
+PIN, or vault contents.</p>
+<h2>Frequently asked questions</h2>
+<p>The complete FAQ is below; these are the most common ones.</p>
+<p><strong>Where are my files stored?</strong>
+In a folder you chose (Files / iCloud Drive). Encrypted on your device first.</p>
+<p><strong>Can you see my photos?</strong>
+No. There is no server, no account, no way in — for us or anyone else.</p>
+<p><strong>Do you upload anything?</strong>
+No analytics, no telemetry, no uploads. The free version shows non-personalised ads (nothing about your vault is shared with the ad SDK); one purchase removes them. Only your own storage
+provider holds copies of the <em>encrypted</em> folder, under your own account.</p>
+<p><strong>I lost my recovery phrase.</strong>
+If the device route is also gone, the vault cannot be opened by anyone. This
+is permanent by design — there is no reset.</p>
+<p><strong>I deleted an item inside the vault. Can I undo it?</strong>
+Not in this version; removal is permanent. Originals outside the vault were
+never touched unless you explicitly chose delete-after-import.</p>
+<p>Full list: see the in-app FAQ page or ask us via GitHub Issues.</p>
+<hr>
+<h1>Frequently asked questions</h1>
+<h2>What exactly is a &quot;vault&quot;?</h2>
+<p>A vault is an ordinary folder whose contents have been encrypted. It has a
+name like <code>MyVault.vault</code> and lives wherever folders live on your iPhone.
+Inside, your photos, videos and files are stored in encrypted form — along
+with their names, thumbnails and albums — so nothing about them can be read
+without your key. You can copy that folder to another device or storage
+service and it will open there with your recovery phrase. The vault belongs
+to you, like a document you own, not an account you sign into.</p>
+<h2>Where are my files actually stored?</h2>
+<p>In a folder <strong>you</strong> choose through the iOS Files picker — On My iPhone,
+iCloud Drive, or another location Files offers. The app reads and writes
+only that folder. There is no Stillbox server involved at any
+point; if you pick iCloud Drive, Apple holds the (encrypted) folder under
+your own Apple ID.</p>
+<h2>Can the developer see my photos or videos?</h2>
+<p>No. Encryption happens on your device before anything is written, and
+decryption happens on your device when you view something. Your keys are
+derived from secrets that never leave your phone. We have no server, no
+account system, and no way to access your vault — technically, not just by
+policy.</p>
+<h2>Do you upload anything anywhere?</h2>
+<p>No. The app has no servers of ours, no analytics, no crash reporting and no telemetry. The free version
+shows non-personalised Google AdMob ads (nothing about your vault is ever given to them), and a one-time
+purchase removes them. The only time anything leaves your device
+is when you yourself export or share a file, or when your chosen storage
+provider (e.g. iCloud) syncs the encrypted folder under your account.</p>
+<h2>I lost my recovery phrase. Can you restore my vault?</h2>
+<p>Unfortunately no — and we want to be direct about this rather than soften
+it. If you have lost both the device unlock route (Face ID + PIN) and the
+recovery phrase, the data inside the vault cannot be decrypted by anyone,
+including us. That is permanent <strong>by design</strong>: the app has no back door,
+because a back door would break the privacy the app exists to provide. Save
+the phrase somewhere safe — a password manager, printed paper in a secure
+place — the moment you create a vault.</p>
+<h2>I reset Face ID / changed my Face ID enrollment and now the app won&#39;t open</h2>
+<p>The Face ID step protects a device-local, non-synchronizing Keychain secret
+tied to the <em>current</em> biometric enrollment. When you re-enroll Face ID, that
+secret is invalidated by iOS — deliberately, so a stolen phone with new
+fingers can&#39;t be used. Your vault itself is untouched. Open the app on the
+same vault using your <strong>24-word recovery phrase</strong>, then set up a new PIN; a fresh device unlock
+route is created and your files and albums stay as they were.</p>
+<h2>What does &quot;Forget saved folder&quot; delete — and what doesn&#39;t it?</h2>
+<p>Forget removes the app&#39;s memory of your vault, from the device:</p>
+<ul>
+<li>the security-scoped bookmark (access grant) to your folder,</li>
+<li>the device-bound unlock credential for that vault,</li>
+<li>the local offline cache kept on the device,</li>
+<li>the saved-folder registry entries.</li>
+</ul>
+<p>It does <strong>not</strong> delete your actual vault folder. The <code>.vault</code> folder with all
+its encrypted files remains exactly where you put it — in Files, iCloud
+Drive, etc. You can delete it manually like any file, or re-add it later with
+your 24-word recovery phrase. Forget removes the local Face ID/PIN credential,
+so that old PIN route is intentionally no longer available.</p>
+<h2>I deleted a photo from the vault. Can I get it back?</h2>
+<p>Not in this version, and we say so plainly: removing an item from a vault is
+permanent — there is no Recently Deleted bin. The original file outside the
+vault (if one still exists where you imported it from) is never touched by
+removing the item from the vault. If you might regret a deletion, export the
+item first.</p>
+<h2>Why does a vault stored in iCloud open slowly the first time?</h2>
+<p>When a vault lives in iCloud Drive, some of its files may exist in the cloud
+but not yet on your iPhone. Before reading, the app asks iOS to download
+(&quot;materialize&quot;) those pieces. Depending on size and connection, first open
+can take a little while; afterwards, opening is fast because the data is
+local. Keep the app open and connected while it finishes.</p>
+<h2>How does the offline cache work?</h2>
+<p>The app keeps a small, private, on-device cache of recently used data so
+browsing and playback stay quick:</p>
+<ul>
+<li>It stores <strong>encrypted</strong> data only — recently viewed media chunks, encrypted
+index generations and thumbnails — verified against checksums before use.</li>
+<li>The cache is capped (well below your free space) and least-recently-used
+items fall out automatically.</li>
+<li>Items marked <em>Keep offline</em> get a dedicated portion so they stay available
+in airplane mode.</li>
+<li>Nothing that could unlock your vault is ever cached: no PIN material, no
+keys, and no unencrypted media. The cache is excluded from backups and is
+removed with <em>Forget saved folder</em> or by deleting the app. Use <em>Forget</em>
+first if you also want the device-local Keychain credential gone: iOS keeps
+Keychain items after an app is deleted.</li>
+</ul>
+<h2>How do I export diagnostics?</h2>
+<p>Open <em>Switch vault</em> and tap <em>Export support diagnostics</em>. It copies a sanitized
+JSON document (event codes only: no file names, paths, keys, PINs or recovery
+phrases) to the clipboard; you decide whether to paste it into a support
+message. Nothing is sent automatically, and the app has no upload service.</p>
+<h2>How do I contact support?</h2>
+<p>Open an issue at <code>github.com/ori2015/stillbox-support/issues/new</code>. Describe what you did and what happened; include a
+screenshot if it helps. Please <strong>never</strong> email us your recovery phrase, your
+PIN, or files from your vault — we don&#39;t need them to help, and sending them
+would put your data at risk.</p>
+
+</main>
+</body>
+</html>

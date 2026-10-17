@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stillbox — Privacy Policy</title>
+<style>:root{color-scheme:light dark;--bg:#f7f7f8;--card:#fff;--text:#16171a;--muted:#5b5f66;--border:#e4e4e7;--accent:#2f6fed}@media(prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#17191f;--text:#f2f3f5;--muted:#9a9da5;--border:#2a2d34;--accent:#5b8bf7}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;padding:24px}main{max-width:760px;margin:0 auto 24px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px}h1{margin-top:0;font-size:1.6rem}h2{font-size:1.15rem;margin-top:1.8rem}a{color:var(--accent)}hr{border:0;border-top:1px solid var(--border);margin:2rem 0}code{background:var(--border);padding:1px 5px;border-radius:4px}.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}.muted{color:var(--muted);font-size:.9rem}</style>
+</head>
+<body>
+<main id="en" lang="en" dir="ltr">
+<h1>Privacy policy — Stillbox</h1>
+<p><strong>Effective date: 17 October 2026</strong></p>
+<p>Stillbox (&quot;the app&quot;, &quot;we&quot;) is built so that we cannot see your
+data. This policy explains exactly what happens to information when you use
+the app.</p>
+<h2>The short version</h2>
+<p><strong>Your vault content never leaves your device, and we collect nothing.</strong> The free version shows
+ads served by Google AdMob; a one-time purchase, <em>Remove ads</em>, turns them off. Details under
+&quot;Advertising&quot; below.</p>
+<ul>
+<li><strong>No accounts.</strong> The app has no sign-up, no user profile, and no user ids.</li>
+<li><strong>No analytics or telemetry.</strong> The app contains no analytics SDKs and sends
+no usage statistics, crash reports to us, or performance metrics anywhere.</li>
+<li><strong>No tracking.</strong> No cross-app or cross-device tracking of any kind; the app does not
+ask for App Tracking Transparency permission and does not use the advertising identifier (IDFA).</li>
+<li><strong>No developer servers.</strong> The app has no backend of ours. The only network traffic is
+the ad SDK&#39;s requests to Google (see &quot;Advertising&quot;) and the App Store purchase; there is no server of ours
+that could receive your files, metadata, or device information.</li>
+</ul>
+<h2>Advertising</h2>
+<p>The free version shows banner ads at the top and bottom of the screen and, rarely, a full-screen ad
+after you lock the vault. They are provided by Google AdMob. To deliver an ad, Google receives the device&#39;s
+IP address and technical device data and acts under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.
+<strong>Nothing about your vault — file names, contents, albums, keys, PIN or recovery phrase — is ever given to the ad SDK</strong>,
+and ads are not personalised. Because ads run in the same app, a banner can be visible while your vault is open; it
+never has access to what is on screen. In the EEA and UK a Google consent form is shown first and can be reopened
+under <em>Privacy choices</em> on the home screen. The one-time purchase <em>Remove ads</em> (processed by Apple) turns all ads off;
+Apple, not us, receives the payment details.</p>
+<h2>Where your data lives</h2>
+<p>Your vault is a folder you choose — for example On My iPhone, iCloud Drive,
+or another storage location available through the iOS Files app. All
+encryption and decryption happens on your device. What gets written to that
+folder is ciphertext: file contents, names, thumbnails, and album structure
+are all encrypted before they leave the app&#39;s memory. The folder also
+contains a small plaintext header describing key-derivation parameters
+(including algorithm settings, format/version identifiers, timestamps,
+chunking parameters and encrypted key-slot metadata; an optional device label
+may also appear). It contains no plaintext PIN, recovery phrase, encryption
+key, filename, album name or media content.</p>
+<p><strong>Storage providers act independently of us.</strong> If you place your vault in
+iCloud Drive or another provider&#39;s storage, that provider stores and syncs
+those files under your account with them, under their terms and privacy
+policy. Apple&#39;s handling of iCloud data is described in Apple&#39;s own privacy
+policy; we have no visibility into it and no relationship with your provider.
+The provider sees encrypted content objects plus the non-secret plaintext
+format header described above — but you should choose providers whose terms
+you trust.</p>
+<h2>Information the app keeps on your device</h2>
+<p>The following never leaves your device unless you move it:</p>
+<ul>
+<li><strong>Device credential:</strong> a device-local, non-synchronizing Keychain secret,
+protected by Face ID and combined with your local PIN to unlock the vault.
+A device passcode must be configured for Face ID, but the app deliberately
+offers no passcode fallback.</li>
+<li><strong>Unlock-attempt counter:</strong> a small device-local, non-synchronizing Keychain
+item that records how many wrong PINs were entered in a row and until when
+further attempts are delayed. It contains no PIN, key or vault data, and it
+is cleared by a successful unlock. It exists so that closing or reinstalling
+the app does not reset the delay.</li>
+<li><strong>Local cache:</strong> an offline cache of recently used <em>encrypted</em> data, kept
+in app-private storage excluded from backups, to make browsing fast. It can
+be removed via <em>Forget saved folder</em> or by deleting the app.</li>
+<li><strong>Security-scoped bookmark:</strong> a reference letting the app reach the vault
+folder you selected. Removed via <em>Forget saved folder</em>.</li>
+</ul>
+<p><strong>Deleting the app.</strong> iOS keeps Keychain items on the device after an app is
+deleted. To remove the device credential and the other items above, use
+<em>Forget saved folder</em> in the app before deleting it (or erase the device).
+The encrypted vault folder itself is never deleted by the app.</p>
+<h2>Recovery phrase</h2>
+<p>Your 24-word recovery phrase is generated on your device and shown once. We
+never receive it and cannot recover it for you. If you tap <em>Copy recovery
+phrase</em>, the phrase is placed on the iOS pasteboard as a device-local item that
+iOS removes automatically after about a minute; it is not shared with your
+other devices through Universal Clipboard. Pasteboard contents are visible to
+other apps you use while the item is present, so we recommend writing the
+phrase down instead. If you lose both device
+access and the recovery phrase, the data in your vault cannot be decrypted —
+by anyone, including us. There is no back door.</p>
+<h2>Diagnostics</h2>
+<p>The app keeps a short, in-memory log of technical event codes (for example
+&quot;an import failed&quot;) that disappears when the app closes. If you ask for help,
+you can choose <em>Switch vault → Export support diagnostics</em> to copy a sanitized
+JSON report (no file names, paths, keys, PINs or recovery phrases) to the
+clipboard and paste it into a support message. Nothing diagnostic is ever
+uploaded automatically. Builds made for development also contain a local
+self-test; it is not part of the App Store version.</p>
+<h2>Support communication</h2>
+<p>If you contact us through GitHub Issues, we receive what you send (typically your
+message and contact details) and use it only to respond and improve the app.
+Please never send recovery phrases, PINs, or vault contents.</p>
+<h2>Children</h2>
+<p>The app is not directed at children under 13 (or the equivalent minimum age
+in your jurisdiction), does not knowingly collect personal information from
+anyone — including children — because we collect no personal information
+ourselves, and contains no user-generated public content. The ad SDK is configured for non-personalised ads only.</p>
+<h2>Changes to this policy</h2>
+<p>If the app&#39;s behavior changes in ways that matter to this policy, we will
+update this page and the effective date above. Because the app has no update
+channel of its own, material changes will also be reflected in the App Store
+release notes. The version of this policy that applied when you obtained the
+app remains archived at <a href="https://ori2015.github.io/stillbox-support/privacy.html">https://ori2015.github.io/stillbox-support/privacy.html</a>.</p>
+<h2>Contact</h2>
+<p>Questions: <a href="https://github.com/ori2015/stillbox-support/issues/new">GitHub Issues</a>
+Policy URL: <a href="https://ori2015.github.io/stillbox-support/privacy.html">https://ori2015.github.io/stillbox-support/privacy.html</a></p>
+
+</main>
+</body>
+</html>
